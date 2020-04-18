@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Path
+  - floor
+  - nodes
+  - enemy
+  - projectile
   layers:
   - Default
   - TransparentFX
