@@ -64,6 +64,8 @@
   <ItemGroup>
     <Compile Include="Assets\scripts\baseattacker.cs" />
     <Compile Include="Assets\scripts\bowdefender.cs" />
+    <Compile Include="Assets\scripts\bulletscript.cs" />
+    <Compile Include="Assets\scripts\catapultscript.cs" />
     <Compile Include="Assets\scripts\defender script.cs" />
     <Compile Include="Assets\scripts\defenderbase.cs" />
     <Compile Include="Assets\scripts\Gamemanager.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Assets\scripts\tier2attacker.cs" />
     <Compile Include="Assets\scripts\wavemanager.cs" />
     <Compile Include="Assets\scripts\waves.cs" />
+    <Compile Include="Assets\spikescript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Users/Ell_1010/Documents/UNITY  - experiments/ldjam - keep it alive/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

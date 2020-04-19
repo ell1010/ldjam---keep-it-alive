@@ -34,13 +34,13 @@ public class defenderbase : MonoBehaviour
 	IEnumerator attack()
 	{
 		attacking = true;
+		print("start attacking");
 		while (attacking)
 		{
 			canattack = true;
 			if (canattack)
 			{
-				GameObject p = Instantiate(projectile , transform.position , Quaternion.identity);
-				p.GetComponent<Rigidbody2D>().velocity = transform.up * 10;
+				spawnbullet();
 				//print(attackersinrange[0].gameObject.name);
 				canattack = false;
 			}
@@ -55,9 +55,17 @@ public class defenderbase : MonoBehaviour
 				attacking = false;
 				yield break;
 			}
-
+			print("wait for frame");
 			yield return null;
 		}
+	}
+
+	public virtual void spawnbullet()
+	{
+		GameObject p = Instantiate(projectile , transform.position , Quaternion.identity);
+		p.GetComponent<Rigidbody2D>().velocity = transform.up * 10;
+		p.GetComponent<bulletscript>().damage = damage;
+		p.GetComponent<bulletscript>().destroy = true;
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)

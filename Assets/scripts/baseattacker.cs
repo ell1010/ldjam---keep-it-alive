@@ -14,6 +14,7 @@ public class baseattacker : MonoBehaviour
 	Vector3 startpos;
 	float time;
 	float dist;
+	public int Damage;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -57,14 +58,15 @@ public class baseattacker : MonoBehaviour
 		if (currenthealth <= 0)
 		{
 			//Instantiate(self , transform.position , Quaternion.identity);
+			Gamemanager.gm.updatecurrency(maxhealth);
 			Destroy(this.gameObject);
 		}
 
 	}
 	public virtual void damage()
 	{
-		print("OUCH");
 		Destroy(this.gameObject);
+		Gamemanager.gm.updatehealth(Damage);
 		//take away health
 	}
 
@@ -72,9 +74,9 @@ public class baseattacker : MonoBehaviour
 	{
 		if (collision.CompareTag("projectile"))
 		{
-			currenthealth--;
+			currenthealth = currenthealth - collision.gameObject.GetComponent<bulletscript>().damage;
 			checkhealth();
-			Destroy(collision.gameObject);
+			collision.gameObject.GetComponent<bulletscript>().destroythis();
 		}
 	}
 

@@ -13,5 +13,5 @@ public class waves : ScriptableObject
 	}
 
 	public wavecontents[] waveinfo;
-	public int typedelay;
+	public float typedelay;
 }
