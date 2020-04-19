@@ -25,9 +25,15 @@ public class defenderbase : MonoBehaviour
 		//dop attacking here
 		if (attackersinrange.Count > 0)
 		{
-			transform.up = attackersinrange[0].gameObject.transform.position - transform.position;
-			if (!attacking)
-				StartCoroutine(attack());
+			if (attackersinrange[0].gameObject == null)
+				attackersinrange.RemoveAt(0);
+			else
+			{
+				transform.up = attackersinrange[0].gameObject.transform.position - transform.position;
+				if (!attacking)
+					StartCoroutine(attack());
+			}
+			
 		}
 	}
 

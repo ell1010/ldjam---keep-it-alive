@@ -33,7 +33,7 @@ public class Gamemanager : MonoBehaviour
 	void Start()
     {
 		currenthealth = initialhealth;
-		currency = 400;
+		currency = 100;
 		currencytext.text = "Currency:" + currency.ToString();
 		healthtext.text = "Health: " + currenthealth.ToString();
 		UI.GetComponent<hotbar>().checkpuchasable(currency);
